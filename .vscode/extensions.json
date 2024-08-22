@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "mikestead.dotenv",
+    "streetsidesoftware.code-spell-checker",
+    "vue.volar",
+    "wix.vscode-import-cost",
+    "xabikos.javascriptsnippets",
+    "yzhang.markdown-all-in-one"
+  ]
+}

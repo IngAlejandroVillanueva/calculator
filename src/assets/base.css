@@ -1,0 +1,24 @@
+:root {
+  --body-bg-color: #ddd;
+  --calculator-bg-color: #222;
+  --calculator-btn-bg-color: #444;
+  --calculator-btn-hover-bg-color: #555;
+  --calculator-input-bg-color: #333;
+  --calculator-text-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body-bg-color);
+}
