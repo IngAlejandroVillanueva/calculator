@@ -13,10 +13,8 @@ A simple and responsive calculator built using Vue.js with TypeScript. This appl
 
 ```
 /src
-  /components
-    App.vue     # Main component with template and input handling
-    useCalculator.ts   # Business logic for the calculator
-    App.css     # Styles specific to the calculator component
+  App.vue     # Main component with template and input handling
+  App.css     # Styles specific to the calculator component
 ```
 
 ## Setup and Installation
@@ -68,10 +66,6 @@ npm run test
 ### Modifying Styles
 
 The styles for the calculator are located in `App.css`. You can customize the appearance by modifying the CSS variables or adding new styles.
-
-### Extending Functionality
-
-To add more functionality or modify the existing logic, update the `useCalculator.ts` file. This file contains the main functions for handling button clicks, calculating results, and managing operators.
 
 ## Contributing
 
