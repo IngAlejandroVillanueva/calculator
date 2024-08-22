@@ -27,20 +27,25 @@ const BUTTONS = [
   'C'
 ]
 
-const calculateResult = (lastChar: string) => {
+const calculateResult = () => {
   try {
-    if (!OPERATORS.includes(lastChar as Operator)) {
+    if (!OPERATORS.includes(result.value[result.value.length - 1] as Operator)) {
       result.value = evaluateExpression(result.value)
-      return
+    } else {
+      result.value = evaluateExpression(result.value.slice(0, -1))
     }
-
-    result.value = evaluateExpression(result.value.slice(0, -1))
   } catch (e) {
     result.value = 'Error'
   }
 }
 
-const addOperator = (operator: Operator, lastChar: string) => {
+const addOperator = (operator: Operator) => {
+  const lastChar = result.value[result.value.length - 1]
+
+  if (result.value === '' && operator !== '-') {
+    return
+  }
+
   if (!OPERATORS.includes(lastChar as Operator)) {
     result.value += operator
   } else if (lastChar !== operator) {
@@ -55,7 +60,7 @@ const handleClickButton = (value: string) => {
 
   const lastChar = result.value[result.value.length - 1]
 
-  if (value === '.' && lastChar === '.') {
+  if (value === '.' && (lastChar === '.' || result.value === '')) {
     return
   }
 
@@ -64,13 +69,15 @@ const handleClickButton = (value: string) => {
       result.value = ''
       break
     case '=':
-      calculateResult(lastChar)
+      if (result.value && !OPERATORS.includes(lastChar as Operator)) {
+        calculateResult()
+      }
       break
     case '+':
     case '-':
     case '*':
     case '/':
-      addOperator(value as Operator, lastChar)
+      addOperator(value as Operator)
       break
     default:
       result.value += value
